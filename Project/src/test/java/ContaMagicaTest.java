@@ -25,7 +25,7 @@ class ContaMagicaTest {
         conta.deposito(1000);
         conta.deposito(20000000);
 
-        Assertions.assertEquals("PLATINUM", conta.getCategoria());
+        Assertions.assertEquals(Categoria.PLATINUM, conta.getCategoria());
     }
 
     @Test
@@ -39,6 +39,42 @@ class ContaMagicaTest {
         Assertions.assertEquals(250203.5, conta.getSaldo());
     }
 
+    @Test
+    public void verificaGold(){
+        ContaMagica conta = new ContaMagica("100445-14", "Thomas Mello");
+        conta.deposito(50000);
+        conta.deposito(1000);
+
+
+        Assertions.assertEquals(Categoria.GOLD, conta.getCategoria());
+    }
+    @Test
+    public void verificaValorizacaoGold(){
+        ContaMagica conta = new ContaMagica("100445-14", "Thomas Mello");
+        conta.deposito(50000);
+        conta.deposito(1000);
+
+        Assertions.assertEquals(51010, conta.getSaldo());
+    }
+
+    @Test
+    public void verificaEstadoSaqueGold(){
+        ContaMagica conta = new ContaMagica("100445-14", "Thomas Mello");
+        conta.deposito(50001);
+        conta.deposito(1000);
+        conta.retirada(500);
+
+        Assertions.assertEquals(Categoria.GOLD, conta.getCategoria());
+    }
+    @Test
+    public void verificaSaqueGold(){
+        ContaMagica conta = new ContaMagica("100445-14", "Thomas Mello");
+        conta.deposito(50001);
+        conta.deposito(1000);
+        conta.retirada(500);
+
+        Assertions.assertEquals(50510, conta.getSaldo());
+    }
 
 
 }
