@@ -65,7 +65,7 @@ public class ContaMagica {
         if (categoria == Categoria.PLATINUM && saldo > 100000){
             saldo -= valor;
         }
-        if (categoria == Categoria.PLATINUM && saldo < 100000){ 
+        if (categoria == Categoria.PLATINUM && saldo < 100000){
             saldo -= valor;
             categoria = Categoria.GOLD;
         }
@@ -112,3 +112,5 @@ public class ContaMagica {
         }
     }
 }
+
+
