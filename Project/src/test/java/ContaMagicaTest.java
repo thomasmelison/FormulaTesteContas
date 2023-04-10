@@ -14,9 +14,9 @@ class ContaMagicaTest {
     public void verificaTransicaoSilverParaGold(){
         ContaMagica contaMagica = new ContaMagica("100445-14", "Filipe Serafini");
         contaMagica.deposito(45000);
-        Assertations.assertEquals(Categoria.SILVER, contaMagica.getCategoria());
+        Assertions.assertEquals(Categoria.SILVER, contaMagica.getCategoria());
         contaMagica.deposito(6000);
-        Assertations.assertEquals(Categoria.GOLD, contaMagica.getCategoria());
+        Assertions.assertEquals(Categoria.GOLD, contaMagica.getCategoria());
 
     }
 
